@@ -774,6 +774,8 @@ namespace at.jku.ssw.cc
                 posDeclarsAux.Nodes.Add(".");
                 posDeclarsAux.ExpandAll();
 				MessageBoxCon3Preg();
+				Code.seleccLaProdEnLaGram(8);
+				MessageBoxCon3Preg();
 
                 //Comienza Block
                 Block(methodDecl);  //Bloque dentro de MethodDecl() 
@@ -1888,7 +1890,7 @@ namespace at.jku.ssw.cc
                             Check(Token.NUMBER);
                             Code.cargaProgDeLaGram("Factor = number.");
                             Code.Colorear("token");
-                                MessageBoxCon3Preg();
+                            //MessageBoxCon3Preg();
                             item = new Item(token.val);//Nuevo
                             Code.Load(item);
                             break;

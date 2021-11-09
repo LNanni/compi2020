@@ -75,9 +75,10 @@ public class Scanner {
         if (ch == EOF) return new Token(Token.EOF, line, col);
         
         Token t = new Token(line, col);
-        //if ('A' <= ch && 'z' >= ch) System.Console.WriteLine(ch + " es letra ");
-        //if ('0' <= ch && '9' >= ch) System.Console.WriteLine(ch + " es nro ");
-        if ((ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z')) //es Letra
+			//if ('A' <= ch && 'z' >= ch) System.Console.WriteLine(ch + " es letra ");
+			//if ('0' <= ch && '9' >= ch) System.Console.WriteLine(ch + " es nro ");
+			// añadiendo (ch == '_') al condicional permite variables del tipo _Var
+		if ((ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z')||(ch == '_')) //es Letra
          ReadName(t);
         else 
          if ('0' <= ch && '9' >= ch)
