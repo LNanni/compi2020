@@ -679,11 +679,11 @@ namespace at.jku.ssw.cc
                 Code.Colorear("token");
                 curMethod = Tab.Insert(Symbol.Kinds.Meth, token.str, type);//inserta void Main 
                 Tab.OpenScope(curMethod);
-                Code.Colorear("token");	// colorea '('
+                Code.Colorear("token");
 				methodDecl.Nodes.Add("'('");
                 MessageBoxCon3Preg();
                 Check(Token.LPAR);  //Si Main() => no tiene FormPars
-                Code.Colorear("token");
+                Code.Colorear("token");	// colorea '('
                 ///// Agrega 'pars' a MethodDecl
                 System.Windows.Forms.TreeNode pars = new System.Windows.Forms.TreeNode("Pars");
                 methodDecl.Nodes.Add(pars);
@@ -1399,16 +1399,16 @@ namespace at.jku.ssw.cc
         static void Block(System.Windows.Forms.TreeNode methodDecl)
         {
             System.Windows.Forms.TreeNode block = new System.Windows.Forms.TreeNode("Block");
-            Code.seleccLaProdEnLaGram(16);
-			MessageBoxCon3Preg();
             methodDecl.Nodes.Add(block);
-            methodDecl.ExpandAll();
-            MessageBoxCon3Preg(block);
 			MessageBoxCon3Preg();
+			
+			Code.seleccLaProdEnLaGram(16);
+			MessageBoxCon3Preg();
+            
+			
             ////// Agrega '{' al arbol
             Check(Token.LBRACE);
-			
-            block.Nodes.Add("'{'");
+			block.Nodes.Add("'{'");
             block.ExpandAll();
             MessageBoxCon3Preg(methodDecl);
 			MessageBoxCon3Preg();
